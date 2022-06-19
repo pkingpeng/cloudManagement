@@ -43,6 +43,32 @@ public class UserinfoController {
             return ResultObject.error(Message.SERVER_ERROR);
         }
     }
+
+    /**
+     * 根据手机号查询用户信息
+     * @return
+     */
+    @RequestMapping("/user/findByUsername")
+    /**
+     * RequestMapping 是一个用来处理请求地址映射的注解，可用于类或方法上。
+     *  用于类上：表示类中的所有响应请求的方法都是以该地址作为父路径
+     *  用于方法上: 提供进一步的细分映射信息
+     */
+    public ResultObject findByPhone(Userinfo user) {
+        try {
+            String username = user.getUsername();
+            Userinfo userinfo = this.userService.selectByUsername(username);
+            //
+            if (userinfo != null) {
+                return ResultObject.success(userinfo);
+            } else {
+                return ResultObject.error("查询的用户名不存在");
+            }
+        } catch (Exception e) {
+            return ResultObject.error(Message.SERVER_ERROR);
+        }
+    }
+
     /**
      * 退出
      * @param request
@@ -71,6 +97,7 @@ public class UserinfoController {
         if(sessionCode != null && sessionCode.equals(code)){
             Userinfo userinfo = userService.selectByPhone(phone);
             if(userinfo == null){
+
                 return ResultObject.error("号码未注册，请联系管理员");
             }else{
                 session.setAttribute("userinfo",userinfo);

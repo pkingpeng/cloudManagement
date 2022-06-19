@@ -21,7 +21,7 @@ module.exports = {
             //如果你的前端应用和后端 API 服务器没有运行在同一个主机上，你需要在开发环境下将 API 请求代理到 API 服务器
 
             "/api": {
-                target: "http://39.100.14.147",
+                target: "http://localhost:8085",
                 // target: "http://192.168.10.103",
 
                 changeOrigin: true,

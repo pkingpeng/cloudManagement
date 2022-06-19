@@ -33,6 +33,10 @@
     select <include refid="Base_Column_List"></include> from userinfo where phone = #{phone}
   </select>
 
+  <select id="selectByUsername" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include> from userinfo where username=#{username}
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

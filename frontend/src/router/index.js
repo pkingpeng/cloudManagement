@@ -58,6 +58,10 @@ const routes = [{
         component: Login,
     },
     {
+        path:"/"
+    },
+
+    {
         path: "/doctor",
         name: "doctor",
         component: Doctor,

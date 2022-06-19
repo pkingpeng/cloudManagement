@@ -21,4 +21,6 @@ public interface UserinfoMapper {
      * @return
      */
     Userinfo selectByPhone(String phone);
+
+    Userinfo selectByUsername(String username);
 }

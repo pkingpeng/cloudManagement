@@ -16,12 +16,11 @@
               class="phone"
               prefix-icon="el-icon-user-solid"
               v-model="form.phone"
-              placeholder="请输入手机号码"
-            >
+              placeholder="请输入手机号码">
             </el-input>
-            <el-button class="getnum" round type="primary" @click="postCode"
-              >获取验证码</el-button
-            >
+            <el-button class="getnum" round type="primary"
+                       @click="postCode"
+              >获取验证码</el-button>
           </el-form-item>
           <el-form-item>
             <el-input
@@ -34,13 +33,15 @@
           </el-form-item>
           <!-- <h4>忘记密码?</h4> -->
           <el-form-item>
-            <el-button class="login" round type="primary" @click="login"
-              >登陆</el-button
-            >
+            <el-button class="login" round type="primary" @click="login">登陆</el-button>
+          </el-form-item>
+          <el-form-item>
+            <el-button class="login" round type="primary" @click="login">使用验证码登录</el-button>
           </el-form-item>
         </el-form>
         <!-- 使用element-ui定义form表单，在样式上做一些调整 -->
       </div>
+
     </div>
   </div>
 </template>
